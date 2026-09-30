@@ -1,0 +1,28 @@
+# GN build arguments for NeoWeb. Copied to chromium/src/out/NeoWeb/args.gn by
+# ./build.sh. List every available option with:
+#   cd chromium/src && gn args out/NeoWeb --list
+
+# Release build with no debug symbols: fastest to build and smallest.
+is_debug = false
+is_component_build = false
+symbol_level = 0
+blink_symbol_level = 0
+v8_symbol_level = 0
+dcheck_always_on = false
+
+# Chromium branding is the base that NeoWeb's branding replaces.
+is_chrome_branded = false
+
+# Play H.264/AAC/MP4 media like Chrome does.
+proprietary_codecs = true
+ffmpeg_branding = "Chrome"
+
+# PGO profiles are Google-internal-only for some versions; skip them.
+chrome_pgo_phase = 0
+
+# Don't fail the build on compiler warnings from upstream code.
+treat_warnings_as_errors = false
+
+# Set to true for a faster, smaller browser. Needs much more RAM (32 GB+)
+# and time to link.
+is_official_build = false
